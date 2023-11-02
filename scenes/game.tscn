@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cksvx0fbfowk8"]
+
+[node name="Game" type="Node2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(800, 600)
+color = Color(0, 0, 0, 1)
