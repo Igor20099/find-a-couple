@@ -21,9 +21,8 @@ var colors = [
 @onready var buttons = get_tree().get_nodes_in_group('buttons')
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	colors.shuffle()
 	for btn in buttons:
-		colors.shuffle()
 		var color_rect = btn.get_child(0)
 		color_rect.set_color(colors.pop_back())
 		color_rect.set_visible(true)
