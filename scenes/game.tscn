@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cksvx0fbfowk8"]
+[gd_scene load_steps=6 format=3 uid="uid://cksvx0fbfowk8"]
 
 [ext_resource type="Script" path="res://scripts/game/Game.gd" id="1_iufoc"]
 [ext_resource type="Script" path="res://scripts/button/Button.gd" id="2_lxnqu"]
+[ext_resource type="AudioStream" uid="uid://c3b5jv0in5m1k" path="res://sounds/ClickButton.wav" id="3_yj8t0"]
+[ext_resource type="AudioStream" uid="uid://kni5mc7assjl" path="res://sounds/Accept.wav" id="4_6l8vh"]
+[ext_resource type="AudioStream" uid="uid://cemoij6dy24v7" path="res://sounds/Cancel.wav" id="5_63ti2"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_iufoc")
@@ -26,7 +29,24 @@ theme_override_constants/margin_left = 300
 theme_override_constants/margin_top = 120
 metadata/_edit_lock_ = true
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 230
+theme_override_constants/margin_right = 150
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "60"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(800, 600)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -35,228 +55,258 @@ theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 6
 columns = 4
 
-[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button2"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button2"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button3"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button3"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button4"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button4"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button5" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button5" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button5"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button5"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button6" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button6" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button6"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button6"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button7" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button7" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button7"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button7"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button8" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button8" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button8"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button8"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button9" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button9" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button9"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button9"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button10" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button10" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button10"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button10"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button11" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button11" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button11"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button11"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button12" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button12" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button12"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button12"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button13" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button13" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button13"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button13"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button14" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button14" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button14"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button14"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button15" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button15" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button15"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button15"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button16" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
+[node name="Button16" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_lxnqu")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button16"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button16"]
 visible = false
 custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button" to="CanvasLayer/MarginContainer/GridContainer/Button" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button2" to="CanvasLayer/MarginContainer/GridContainer/Button2" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button3" to="CanvasLayer/MarginContainer/GridContainer/Button3" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button4" to="CanvasLayer/MarginContainer/GridContainer/Button4" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button5" to="CanvasLayer/MarginContainer/GridContainer/Button5" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button6" to="CanvasLayer/MarginContainer/GridContainer/Button6" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button7" to="CanvasLayer/MarginContainer/GridContainer/Button7" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button8" to="CanvasLayer/MarginContainer/GridContainer/Button8" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button9" to="CanvasLayer/MarginContainer/GridContainer/Button9" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button10" to="CanvasLayer/MarginContainer/GridContainer/Button10" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button11" to="CanvasLayer/MarginContainer/GridContainer/Button11" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button12" to="CanvasLayer/MarginContainer/GridContainer/Button12" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button13" to="CanvasLayer/MarginContainer/GridContainer/Button13" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button14" to="CanvasLayer/MarginContainer/GridContainer/Button14" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button15" to="CanvasLayer/MarginContainer/GridContainer/Button15" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/Button16" to="CanvasLayer/MarginContainer/GridContainer/Button16" method="_on_pressed"]
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yj8t0")
+volume_db = 0.08
+
+[node name="AcceptSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6l8vh")
+volume_db = -8.0
+
+[node name="CanselSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_63ti2")
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button2" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button3" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button3" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button4" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button4" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button5" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button5" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button6" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button6" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button7" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button7" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button8" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button8" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button9" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button9" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button10" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button10" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button11" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button11" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button12" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button12" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button13" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button13" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button14" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button14" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button15" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button15" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button16" to="CanvasLayer/MarginContainer/VBoxContainer/GridContainer/Button16" method="_on_pressed"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
