@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FindACouple"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,3 +24,4 @@ Globals="*res://scripts/global/Globals.gd"
 
 window/size/viewport_width=800
 window/size/viewport_height=600
+window/stretch/mode="canvas_items"
