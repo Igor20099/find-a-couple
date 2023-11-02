@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://cksvx0fbfowk8"]
+[gd_scene load_steps=2 format=3 uid="uid://cksvx0fbfowk8"]
+
+[ext_resource type="Script" path="res://scripts/game/Game.gd" id="1_iufoc"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_iufoc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -20,6 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 300
 theme_override_constants/margin_top = 120
+metadata/_edit_lock_ = true
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer"]
 custom_minimum_size = Vector2(800, 600)
@@ -30,98 +34,195 @@ theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 6
 columns = 4
 
-[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button2"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button3"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button5" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button4"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button5" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button6" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button5"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button6" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button7" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button6"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button7" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button8" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button7"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button8" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button9" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button8"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button9" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button10" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button9"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button10" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button11" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button10"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button11" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button12" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button11"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button12" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button13" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button12"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button13" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button14" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button13"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button14" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button15" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button14"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button15" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button16" type="Button" parent="CanvasLayer/MarginContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button15"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button16" type="Button" parent="CanvasLayer/MarginContainer/GridContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer/GridContainer/Button16"]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
