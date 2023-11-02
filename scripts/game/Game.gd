@@ -27,9 +27,10 @@ var win_message = preload('res://ui/win_message.tscn')
 @onready var buttons = get_tree().get_nodes_in_group('buttons')
 @onready var audio_player = $AcceptSound
 @onready var cancel_player = $CanselSound 
+var save_path = 'user://best_score.save'
 
 func _ready():
-	
+	load_data()
 	colors.shuffle()
 	set_colors_in_buttons(colors,buttons)
 	Events.compare_colors.connect(compare_colors)
@@ -37,8 +38,6 @@ func _ready():
 	Events.game_over.connect(game_over)
 	label.text = str(Globals.GAME_TIME)
 
-func _process(delta):
-	pass
 
 func set_colors_in_buttons(colors,buttons):
 	for btn in buttons:
@@ -79,9 +78,30 @@ func game_over():
 	add_child(game_over)
 	Globals.color_first = null
 	Globals.color_second = null	
+	
 func win():
 	if Globals.opened_color == Globals.COLORS_COUNT:
+		game_timer.stop()
+		Globals.result = Globals.GAME_TIME - seconds
+		if Globals.best_result == 0:
+			Globals.best_result = Globals.result
+			save(Globals.result)
+		elif Globals.best_result < Globals.result:
+			load_data()
+		elif Globals.best_result > Globals.result:
+			Globals.best_result = Globals.result
+			save(Globals.best_result)
 		var win = win_message.instantiate()
 		add_child(win)
 		Globals.color_first = null
 		Globals.color_second = null	
+		
+func save(result):
+	var file = FileAccess.open(save_path,FileAccess.WRITE)
+	file.store_var( result)
+	
+func load_data():
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path,FileAccess.READ)
+		Globals.best_result = file.get_var( Globals.best_result)
+	
