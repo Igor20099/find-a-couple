@@ -28,6 +28,8 @@ var win_message = preload('res://ui/win_message.tscn')
 @onready var audio_player = $AcceptSound
 @onready var cancel_player = $CanselSound 
 var save_path = 'user://best_score.save'
+var minutes = 0
+var sec = 0
 
 func _ready():
 	load_data()
@@ -36,7 +38,7 @@ func _ready():
 	Events.compare_colors.connect(compare_colors)
 	Events.win.connect(win)
 	Events.game_over.connect(game_over)
-	label.text = str(Globals.GAME_TIME)
+	show_timer(Globals.GAME_TIME)
 
 
 func set_colors_in_buttons(colors,buttons):
@@ -53,7 +55,9 @@ func compare_colors(color_first,color_second):
 		audio_player.play()
 		Events.win.emit()
 	elif Globals.color_first != Globals.color_second:
+		set_buttons_disable(true)
 		await get_tree().create_timer(0.5).timeout
+		set_buttons_disable(false)
 		set_visible_colors(false)
 		cancel_player.play()
 		Globals.opened_color = 0
@@ -68,7 +72,8 @@ func set_visible_colors(visible):
 
 func _on_game_timer_timeout():
 	seconds -=1
-	label.text = str(seconds)
+	show_timer(seconds)
+	
 	if seconds == -1:
 		game_timer.stop()
 		Events.game_over.emit()
@@ -104,4 +109,12 @@ func load_data():
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path,FileAccess.READ)
 		Globals.best_result = file.get_var( Globals.best_result)
+		
+func set_buttons_disable(is_disabled):
+	for btn in buttons:
+		btn.disabled = is_disabled
 	
+func show_timer(seconds):
+		minutes = int(seconds / 60)
+		sec = int(seconds - minutes * 60)
+		label.text = "%2d:%02d" % [minutes, sec]
